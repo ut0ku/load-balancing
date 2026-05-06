@@ -1,0 +1,45 @@
+# Node modules
+node_modules/
+npm-debug.log
+package-lock.json
+yarn.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+.env
+
+# Logs
+*.log
+logs/
+
+# Docker
+.dockerignore
+
+# Temp files
+*.tmp
+*.bak
+
+# Cache
+.cache/
+*.pyc
+__pycache__/
+
+# Build output
+dist/
+build/
+
+# Test results
+.coverage
+htmlcov/
+
+# Local nginx
+pid/
+lock/
