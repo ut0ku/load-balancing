@@ -1,6 +1,8 @@
 # Задание 22
 
 Подготовлены и запущены 3 backend-сервера в докере, а также Nginx и HAProxy балансировщики
+добавлены настройки отказоустойчивости через max_fails и fail_timeout
+
 <img width="1445" height="373" alt="image" src="https://github.com/user-attachments/assets/26ddcd32-5efa-42ae-ba7c-5f44147f2c15" />
 
 Сервер на порту 3002 является backup сервером
