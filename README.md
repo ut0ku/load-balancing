@@ -1,4 +1,4 @@
-# Задание 22-23
+# Задание 22
 
 Подготовлены и запущены 3 backend-сервера в докере, а также Nginx и HAProxy балансировщики
 добавлены настройки отказоустойчивости через max_fails и fail_timeout
@@ -139,3 +139,10 @@ IP Hash - http://localhost:9002/
 <img width="1442" height="372" alt="image" src="https://github.com/user-attachments/assets/61e21faf-5810-4662-8a76-88aebc27e859" />
 <img width="1305" height="876" alt="image" src="https://github.com/user-attachments/assets/4e614c49-940f-44c3-a4a1-bc9f5b1778c8" />
 
+# Задание 23
+
+Добавлен Backend docker profile
+Backend-сервисы отвечают на запросы /GET с указаниями индификтора {"server": "backend-1"}, {"server": "backend-2"}, {"server": "backend-3"}
+Настроен Nginx в роли балансировщика нагрузки
+docker-compose.yml описывает все сервисы и объединет их в одну сеть
+Настроен Dockerfile для backend-сервиса
