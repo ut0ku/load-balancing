@@ -160,7 +160,7 @@ docker-compose.yml описывает все сервисы и объедине�
 <img width="1312" height="879" alt="image" src="https://github.com/user-attachments/assets/2519ea57-c076-4ff7-a8ce-cb9e057d8102" />
 
 Добавлены настройки отказоустойчивости (max_fails и fail_timeout) в Nginx
-<img width="412" height="71" alt="image" src="https://github.com/user-attachments/assets/20ed9c20-888c-4767-bde1-f13ea9f4703c" />
+<img width="476" height="67" alt="image" src="https://github.com/user-attachments/assets/15b2f43f-b535-485b-afa3-1f144a6863fb" />
 
 Проверка отказоустойчивости
 При отключении сервера, Nginx должен перестать направлять на него запросы и продолжить обслуживать трафик через оставшиеся сервера.
