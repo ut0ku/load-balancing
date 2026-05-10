@@ -5,9 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "start:server1": "PORT=3000 node server.js",
-    "start:server2": "PORT=3001 node server.js",
-    "start:server3": "PORT=3002 node server.js",
+    "start:server1": "PORT=8080 node server.js",
+    "start:server2": "PORT=8080 node server.js",
+    "start:server3": "PORT=8080 node server.js",
     "start:all": "concurrently \"npm run start:server1\" \"npm run start:server2\" \"npm run start:server3\"",
     "start:all-windows": "start \"Server 1\" cmd /k npm run start:server1 && start \"Server 2\" cmd /k npm run start:server2 && start \"Server 3\" cmd /k npm run start:server3"
   },

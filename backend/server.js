@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
+const SERVER_ID = process.env.SERVER_ID || `backend-${PORT}`;
 
 // Middleware
 app.use(express.json());
@@ -23,9 +24,8 @@ app.get("/health", (req, res) => {
 // Main endpoint
 app.get("/", (req, res) => {
     res.json({
-        message: "Response from backend server",
+        server: SERVER_ID,
         port: PORT,
-        serverName: `Server-${PORT}`,
         timestamp: new Date().toISOString(),
         pid: process.pid
     });
@@ -45,6 +45,7 @@ app.get("/slow", (req, res) => {
 
 app.listen(PORT, "0.0.0.0", () => {
     console.log(`\n✓ Backend Server started on port ${PORT}`);
+    console.log(`✓ Server ID: ${SERVER_ID}`);
     console.log(`✓ Process ID: ${process.pid}`);
     console.log(`✓ Endpoints: http://localhost:${PORT}/`);
     console.log(`✓ Health check: http://localhost:${PORT}/health`);
