@@ -146,3 +146,32 @@ Backend-сервисы отвечают на запросы /GET с указан
 Настроен Nginx в роли балансировщика нагрузки
 docker-compose.yml описывает все сервисы и объединет их в одну сеть
 Настроен Dockerfile для backend-сервиса
+
+Все сервера запущены на порту 8080
+<img width="1464" height="445" alt="image" src="https://github.com/user-attachments/assets/6e292cac-eec6-4b8e-be57-474ce915465e" />
+
+Проверка балансировки
+(при повторных запросах к http://localhost/ ответы должны поочередно приходить от разных серверов)
+
+1 запрос (backend-1)
+<img width="1310" height="878" alt="image" src="https://github.com/user-attachments/assets/c5e43d28-866c-44d6-b22e-3aa04f81beb0" />
+
+2 запрос (backend-2)
+<img width="1312" height="879" alt="image" src="https://github.com/user-attachments/assets/2519ea57-c076-4ff7-a8ce-cb9e057d8102" />
+
+Добавлены настройки отказоустойчивости (max_fails и fail_timeout) в Nginx
+<img width="412" height="71" alt="image" src="https://github.com/user-attachments/assets/20ed9c20-888c-4767-bde1-f13ea9f4703c" />
+
+Проверка отказоустойчивости
+При отключении сервера, Nginx должен перестать направлять на него запросы и продолжить обслуживать трафик через оставшиеся сервера.
+
+Отключение backend-2
+<img width="1437" height="109" alt="image" src="https://github.com/user-attachments/assets/6016338a-fa65-460f-9d36-124534ccceb2" />
+
+Отправка запроса
+<img width="1312" height="879" alt="image" src="https://github.com/user-attachments/assets/e0878786-4cde-47a1-8845-33c1a0298295" />
+
+Отключение backend-1 & backend-2
+
+Отправка запроса
+<img width="1312" height="879" alt="image" src="https://github.com/user-attachments/assets/bd3e4bbe-a2d5-4c8b-806e-f9bcba09d3c1" />
